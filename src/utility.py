@@ -15,17 +15,17 @@ def generate_password(pdw_lengths):
     passwords = []
 
     for i in range(len(pdw_lengths)):
-        password = ""
+        buffer = ""
         for j in range(pdw_lengths[i]):
 
             random_index = random.randrange(len(alphabets))
-            password = password + alphabets[random_index]
+            buffer = buffer + alphabets[random_index]
 
-        password = mutate_capital(password)
-        password = mutate_digits(password)
-        password = mutate_symbols(password)
+        buffer = mutate_capital(buffer)
+        buffer = mutate_digits(buffer)
+        buffer = mutate_symbols(buffer)
 
-        passwords.append(password)
+        passwords.append(buffer)
 
     return passwords
 
@@ -34,8 +34,6 @@ def mutate_digits(password):
     """
     Function for mutating the given password with random digits
     """
-    
-
     return password
 
 
