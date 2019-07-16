@@ -1,5 +1,9 @@
 language: python
 python:
   - "3.6"
+install:
+  - pip install coveralls
 script:
   - python password_test.py
+after_success:
+  - coveralls
